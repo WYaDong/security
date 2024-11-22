@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "模块描述"
+    },
+    {
+      "name": "SecurityDemoAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "SecurityDemoAbility_label",
+      "value": "label"
+    }
+  ]
+}

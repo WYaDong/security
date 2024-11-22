@@ -1,0 +1,12 @@
+{
+  "name": "@yd/security",
+  "version": "1.0.8",
+  "description": "Security is core. It provides AES encrypt, AES decrypt, Hash(MD5, HmacMD5, SHA1~SHA512) messages.",
+  "main": "Index.ets",
+  "author": "ya dong",
+  "license": "MIT",
+  "keywords": ["Security", "SecuritySDK", "aes", "md", "cbc", "sha", "HMacSha", "sm"],
+  "homepage": "",
+  "repository": "",
+  "dependencies": {}
+}
