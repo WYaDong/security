@@ -36,7 +36,7 @@ by ya dong <br>
 1.升级开发工具版本为: 5.0.3.900, built on October 8, 2024<br>
 2.优化替换系统api
 
-## 1.0.8
+## 1.0.9
 2024.11.22 发布<br>
 基于API12开发，升级为release版本 <br>
 1.升级开发工具版本为: 5.0.3.906, built on October 21, 2024<br>
