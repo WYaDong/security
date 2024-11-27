@@ -13,9 +13,9 @@ import { buffer } from '@kit.ArkTS'
 import { HiLogUtils } from './utils/log/HiLogUtils'
 
 export enum AESKeyEnum {
-  AES128 = "AES128",
-  AES192 = "AES192",
-  AES256 = "AES256"
+  AES128 = 'AES128',
+  AES192 = 'AES192',
+  AES256 = 'AES256'
 }
 
 export class Security {

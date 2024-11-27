@@ -11,14 +11,14 @@ import { AESKeyEnum } from '../Security';
 import { HiLogUtils } from './log/HiLogUtils';
 
 export enum AESPKCSEnum {
-  PKCS7 = "PKCS7",
-  PKCS5 = "PKCS5"
+  PKCS7 = 'PKCS7',
+  PKCS5 = 'PKCS5'
 }
 
 export enum AESMSEnum {
-  CBC = "CBC",
-  GCM = "GCM",
-  ECB = "ECB"
+  CBC = 'CBC',
+  GCM = 'GCM',
+  ECB = 'ECB'
 }
 
 export class AES {
@@ -50,7 +50,7 @@ export class AES {
         data: ivData
       }
       let symIv: cryptoFramework.IvParamsSpec = {
-        algName: "IvParamsSpec",
+        algName: 'IvParamsSpec',
         iv: ivBlob
       }
       // 解密
@@ -88,7 +88,7 @@ export class AES {
         data: ivData
       }
       let symIv: cryptoFramework.IvParamsSpec = {
-        algName: "IvParamsSpec",
+        algName: 'IvParamsSpec',
         iv: ivBlob
       }
       // 加密 'AES128|CBC|PKCS5'

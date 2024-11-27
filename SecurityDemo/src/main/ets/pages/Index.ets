@@ -16,61 +16,61 @@ struct Index {
           .padding(20)
           .fontColor(Color.White)
       }
-      .width("100%")
-      .height("30%")
+      .width('100%')
+      .height('30%')
       .backgroundColor(Color.Black)
       .alignItems(HorizontalAlign.Start)
 
       Column() {
-        Button("md5", { type: ButtonType.Normal, stateEffect: true })
+        Button('md5', { type: ButtonType.Normal, stateEffect: true })
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
           .borderRadius(8)
-          .width("80%")
+          .width('80%')
           .height(45)
           .margin({ top: 15 })
           .backgroundColor(Color.Blue)
           .onClick(async () => {
-            let md5 = await Security.md5("abcdef")
+            let md5 = await Security.md5('abcdef')
             this.message = '结果展示：'
-            this.message = this.message + "\n" + "md5: " + md5.hex()
-            hilog.info(1000, "Securitytag", this.message)
+            this.message = this.message + '\n' + 'md5: ' + md5.hex()
+            hilog.info(1000, 'Securitytag', this.message)
           })
-        Button("HMacSha", { type: ButtonType.Normal, stateEffect: true })
+        Button('HMacSha', { type: ButtonType.Normal, stateEffect: true })
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
           .borderRadius(8)
-          .width("80%")
+          .width('80%')
           .height(45)
           .margin({ top: 15 })
           .backgroundColor(Color.Blue)
           .onClick(async () => {
-            let result256 = await Security.HMacSha256("abcdef", "123456")
+            let result256 = await Security.HMacSha256('abcdef', '123456')
             this.message = '结果展示：'
-            this.message = this.message + "\n" + "HMacSha256: " + result256.hex()
-            hilog.info(1000, "Securitytag", this.message)
-          })
-
-        Button("sha ", { type: ButtonType.Normal, stateEffect: true })
-          .fontSize(20)
-          .fontWeight(FontWeight.Bold)
-          .borderRadius(8)
-          .width("80%")
-          .height(45)
-          .margin({ top: 15 })
-          .backgroundColor(Color.Blue)
-          .onClick(async () => {
-            let resultSha256 = await Security.sha256("abcdef")
-            this.message = '结果展示：'
-            this.message = this.message + "\n" + "sha256: " + resultSha256.hex()
-            hilog.info(1000, "Securitytag", this.message)
+            this.message = this.message + '\n' + 'HMacSha256: ' + result256.hex()
+            hilog.info(1000, 'Securitytag', this.message)
           })
 
-        Button("aes128 加解密", { type: ButtonType.Normal, stateEffect: true })
+        Button('sha ', { type: ButtonType.Normal, stateEffect: true })
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
           .borderRadius(8)
-          .width("80%")
+          .width('80%')
+          .height(45)
+          .margin({ top: 15 })
+          .backgroundColor(Color.Blue)
+          .onClick(async () => {
+            let resultSha256 = await Security.sha256('abcdef')
+            this.message = '结果展示：'
+            this.message = this.message + '\n' + 'sha256: ' + resultSha256.hex()
+            hilog.info(1000, 'Securitytag', this.message)
+          })
+
+        Button('aes128 加解密', { type: ButtonType.Normal, stateEffect: true })
+          .fontSize(20)
+          .fontWeight(FontWeight.Bold)
+          .borderRadius(8)
+          .width('80%')
           .height(45)
           .margin({ top: 15 })
           .backgroundColor(Color.Blue)
@@ -80,38 +80,38 @@ struct Index {
             let iv = '67e7d725dfe24ca1'
             let aesRst = await Security.aesEncrypt(plainText, key, iv)
             this.message = '结果展示：'
-            this.message = this.message + "\n" + "aesEncrypt: " + aesRst.hex()
-            hilog.info(1000, "Securitytag", this.message)
+            this.message = this.message + '\n' + 'aesEncrypt: ' + aesRst.hex()
+            hilog.info(1000, 'Securitytag', this.message)
 
             // 加密
             let aesRst2 = await Security.aesEncryptWithData(aesRst.data(), new Uint8Array(buffer.from(key, 'utf-8')
               .buffer),
               new Uint8Array(buffer.from(iv, 'utf-8').buffer))
-            this.message = this.message + "\n" + "aesEncryptWithData: " + aesRst2.hex()
-            hilog.info(1000, "Securitytag", this.message)
+            this.message = this.message + '\n' + 'aesEncryptWithData: ' + aesRst2.hex()
+            hilog.info(1000, 'Securitytag', this.message)
 
             // 解密
             let aseDec = await Security.aesDecrypt(aesRst.data(), key, iv)
-            this.message = this.message + "\n" + "aesDecrypt: " + aseDec.utf8String()
-            hilog.info(1000, "Securitytag", this.message)
+            this.message = this.message + '\n' + 'aesDecrypt: ' + aseDec.utf8String()
+            hilog.info(1000, 'Securitytag', this.message)
 
             let aseDec2 = await Security.aesDecryptWithData(aesRst.data(), new Uint8Array(buffer.from(key, 'utf-8')
               .buffer),
               new Uint8Array(buffer.from(iv, 'utf-8').buffer))
-            this.message = this.message + "\n" + "aesEncryptWithData: " + aseDec2.utf8String()
-            hilog.info(1000, "Securitytag", this.message)
+            this.message = this.message + '\n' + 'aesEncryptWithData: ' + aseDec2.utf8String()
+            hilog.info(1000, 'Securitytag', this.message)
 
 
-            hilog.info(1000, "Securitytag",
-              "aesDecryptWithString: " + (await Security.aesDecryptWithHexString("323342D5B1B8558F002A75BE1EAEF305",
-                "afae4ec844ed14ca", "67e7d725dfe24ca1")).utf8String())
+            hilog.info(1000, 'Securitytag',
+              'aesDecryptWithString: ' + (await Security.aesDecryptWithHexString('323342D5B1B8558F002A75BE1EAEF305',
+                'afae4ec844ed14ca', '67e7d725dfe24ca1')).utf8String())
           })
 
-        Button("aes192 加解密", { type: ButtonType.Normal, stateEffect: true })
+        Button('aes192 加解密', { type: ButtonType.Normal, stateEffect: true })
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
           .borderRadius(8)
-          .width("80%")
+          .width('80%')
           .height(45)
           .margin({ top: 15 })
           .backgroundColor(Color.Blue)
@@ -123,35 +123,35 @@ struct Index {
             // 加密
             let aesRst = await Security.aesEncryptWithSymAlgName(plainText, key, iv, AESKeyEnum.AES192)
             this.message = '结果展示：'
-            this.message = this.message + "\n" + "aesEncrypt192: " + aesRst.hex()
-            hilog.info(1000, "Securitytag", this.message)
+            this.message = this.message + '\n' + 'aesEncrypt192: ' + aesRst.hex()
+            hilog.info(1000, 'Securitytag', this.message)
 
             let aesRst2 =
               await Security.aesEncryptWithSymAlgNameWithData(aesRst.data(), new Uint8Array(buffer.from(key, 'utf-8')
                 .buffer),
                 new Uint8Array(buffer.from(iv, 'utf-8').buffer), AESKeyEnum.AES192)
-            this.message = this.message + "\n" + "aesEncryptWithData192: " + aesRst2.hex()
-            hilog.info(1000, "Securitytag", this.message)
+            this.message = this.message + '\n' + 'aesEncryptWithData192: ' + aesRst2.hex()
+            hilog.info(1000, 'Securitytag', this.message)
 
 
             // 解密
             let aseDec = await Security.aesDecryptWithSymAlgName(aesRst.data(), key, iv, AESKeyEnum.AES192)
-            this.message = this.message + "\n" + "aesDecrypt192: " + aseDec.utf8String()
-            hilog.info(1000, "Securitytag", this.message)
+            this.message = this.message + '\n' + 'aesDecrypt192: ' + aseDec.utf8String()
+            hilog.info(1000, 'Securitytag', this.message)
 
             let aseDec2 =
               await Security.aesDecryptWithSymAlgNameWithData(aesRst.data(), new Uint8Array(buffer.from(key, 'utf-8')
                 .buffer),
                 new Uint8Array(buffer.from(iv, 'utf-8').buffer), AESKeyEnum.AES192)
-            this.message = this.message + "\n" + "aesEncryptWithData192: " + aseDec2.utf8String()
-            hilog.info(1000, "Securitytag", this.message)
+            this.message = this.message + '\n' + 'aesEncryptWithData192: ' + aseDec2.utf8String()
+            hilog.info(1000, 'Securitytag', this.message)
           })
 
-        Button("aes256 加解密", { type: ButtonType.Normal, stateEffect: true })
+        Button('aes256 加解密', { type: ButtonType.Normal, stateEffect: true })
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
           .borderRadius(8)
-          .width("80%")
+          .width('80%')
           .height(45)
           .margin({ top: 15 })
           .backgroundColor(Color.Blue)
@@ -163,28 +163,28 @@ struct Index {
             // 加密
             let aesRst = await Security.aesEncryptWithSymAlgName(plainText, key, iv, AESKeyEnum.AES256)
             this.message = '结果展示：'
-            this.message = this.message + "\n" + "aesEncrypt256: " + aesRst.hex()
-            hilog.info(1000, "Securitytag", this.message)
+            this.message = this.message + '\n' + 'aesEncrypt256: ' + aesRst.hex()
+            hilog.info(1000, 'Securitytag', this.message)
 
             let aesRst2 =
               await Security.aesEncryptWithSymAlgNameWithData(aesRst.data(), new Uint8Array(buffer.from(key, 'utf-8')
                 .buffer),
                 new Uint8Array(buffer.from(iv, 'utf-8').buffer), AESKeyEnum.AES256)
-            this.message = this.message + "\n" + "aesEncryptWithData256: " + aesRst2.hex()
-            hilog.info(1000, "Securitytag", this.message)
+            this.message = this.message + '\n' + 'aesEncryptWithData256: ' + aesRst2.hex()
+            hilog.info(1000, 'Securitytag', this.message)
 
 
             // 解密
             let aseDec = await Security.aesDecryptWithSymAlgName(aesRst.data(), key, iv, AESKeyEnum.AES256)
-            this.message = this.message + "\n" + "aesDecrypt256: " + aseDec.utf8String()
-            hilog.info(1000, "Securitytag", this.message)
+            this.message = this.message + '\n' + 'aesDecrypt256: ' + aseDec.utf8String()
+            hilog.info(1000, 'Securitytag', this.message)
 
             let aseDec2 =
               await Security.aesDecryptWithSymAlgNameWithData(aesRst.data(), new Uint8Array(buffer.from(key, 'utf-8')
                 .buffer),
                 new Uint8Array(buffer.from(iv, 'utf-8').buffer), AESKeyEnum.AES256)
-            this.message = this.message + "\n" + "aesEncryptWithData256: " + aseDec2.utf8String()
-            hilog.info(1000, "Securitytag", this.message)
+            this.message = this.message + '\n' + 'aesEncryptWithData256: ' + aseDec2.utf8String()
+            hilog.info(1000, 'Securitytag', this.message)
           })
       }
       .width('100%')

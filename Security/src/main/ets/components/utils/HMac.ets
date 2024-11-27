@@ -10,12 +10,12 @@ import { buffer } from '@kit.ArkTS';
 import { HiLogUtils } from './log/HiLogUtils';
 
 export enum HMACEnum {
-  SHA1 = "SHA1",
-  SHA224 = "SHA224",
-  SHA256 = "SHA256",
-  SHA384 = "SHA384",
-  SHA512 = "SHA512",
-  SM3 = "SM3"
+  SHA1 = 'SHA1',
+  SHA224 = 'SHA224',
+  SHA256 = 'SHA256',
+  SHA384 = 'SHA384',
+  SHA512 = 'SHA512',
+  SM3 = 'SM3'
 }
 
 export class HMac {
@@ -44,8 +44,7 @@ export class HMac {
       }
       let macResult = await mac.doFinal()
       return macResult.data
-    }
-    catch (e) {
+    } catch (e) {
       HiLogUtils.error(JSON.stringify(e))
       return new Uint8Array()
     }

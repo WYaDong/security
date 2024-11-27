@@ -10,13 +10,13 @@ import { buffer } from '@kit.ArkTS'
 import { HiLogUtils } from './log/HiLogUtils'
 
 export enum MdEnum {
-  SHA1 = "SHA1",
-  SHA224 = "SHA224",
-  SHA256 = "SHA256",
-  SHA384 = "SHA384",
-  SHA512 = "SHA512",
-  MD5 = "MD5",
-  SM3 = "SM3"
+  SHA1 = 'SHA1',
+  SHA224 = 'SHA224',
+  SHA256 = 'SHA256',
+  SHA384 = 'SHA384',
+  SHA512 = 'SHA512',
+  MD5 = 'MD5',
+  SM3 = 'SM3'
 }
 
 export class MD {
@@ -28,8 +28,7 @@ export class MD {
       })
       let mdOutput = await md.digest()
       return mdOutput.data
-    }
-    catch (e) {
+    } catch (e) {
       HiLogUtils.error(JSON.stringify(e))
       return new Uint8Array
     }
