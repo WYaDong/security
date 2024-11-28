@@ -42,3 +42,10 @@ by ya dong <br>
 1.升级开发工具版本为: 5.0.3.906, built on October 21, 2024<br>
 2.优化部分代码<br>
 3.同步在gitee和github上开源，欢迎大家支持和使用，有需要可以提PR和issue
+
+## 1.1.0
+2024.11.28 发布<br>
+基于API12开发 <br>
+开发工具版本为: 5.0.3.906, built on October 21, 2024<br>
+1.SecurityResult增加状态码，100为成功<br>
+2.优化部分代码结构<br>

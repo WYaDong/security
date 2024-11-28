@@ -1,6 +1,6 @@
 {
   "name": "@yd/security",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Security is core. It provides AES encrypt, AES decrypt, Hash(MD5, HmacMD5, SHA1~SHA512) messages.",
   "main": "Index.ets",
   "author": "ya dong",

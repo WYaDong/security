@@ -40,7 +40,7 @@ let d2Result: string = (await Security.aesDecryptWithHexString("323342D5B1B8558F
 ## SecurityResult
 
 SecurityResult is the result class of Security. It provides convert result data to Uint8Array, string, HEX string,
-Base64 string.
+Base64 string. The code indicating success or failure.
 
 ```arkts
 data(): Uint8Array 

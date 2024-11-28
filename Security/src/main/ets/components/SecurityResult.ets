@@ -10,9 +10,13 @@ import { HiLogUtils } from './utils/log/HiLogUtils'
 
 export class SecurityResult {
   private _data: Uint8Array
+  code: number = 0
 
   constructor(initData: Uint8Array) {
     this._data = initData
+    if (initData && initData.length > 0) {
+      this.code = 100
+    }
   }
 
   data(): Uint8Array {
@@ -29,7 +33,7 @@ export class SecurityResult {
   }
 
   hex(): string {
-    return this._data.reduce((str, byte) => str + byte.toString(16).padStart(2, '0'), '').toUpperCase()
+    return this.hexLower().toUpperCase()
   }
 
   hexLower(): string {

@@ -5,9 +5,9 @@
 // Author     ：ya dong
 // Copyright © 2024 CL. All rights reserved.
 
-import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-import { buffer } from '@kit.ArkTS';
-import { HiLogUtils } from './log/HiLogUtils';
+import { cryptoFramework } from '@kit.CryptoArchitectureKit'
+import { buffer } from '@kit.ArkTS'
+import { HiLogUtils } from './log/HiLogUtils'
 
 export enum HMACEnum {
   SHA1 = 'SHA1',

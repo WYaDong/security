@@ -1,7 +1,7 @@
-import { hilog } from '@kit.PerformanceAnalysisKit';
-import { Security } from '@yd/security';
-import { buffer } from '@kit.ArkTS';
-import { AESKeyEnum } from '@yd/security/src/main/ets/components/Security';
+import { hilog } from '@kit.PerformanceAnalysisKit'
+import { Security } from '@yd/security'
+import { buffer } from '@kit.ArkTS'
+import { AESKeyEnum } from '@yd/security/src/main/ets/components/Security'
 
 @Entry
 @Component
@@ -33,7 +33,7 @@ struct Index {
           .onClick(async () => {
             let md5 = await Security.md5('abcdef')
             this.message = '结果展示：'
-            this.message = this.message + '\n' + 'md5: ' + md5.hex()
+            this.message = this.message + '\n' + 'md5: ' + md5.hex()+ "  code:" + md5.code
             hilog.info(1000, 'Securitytag', this.message)
           })
         Button('HMacSha', { type: ButtonType.Normal, stateEffect: true })
@@ -47,7 +47,7 @@ struct Index {
           .onClick(async () => {
             let result256 = await Security.HMacSha256('abcdef', '123456')
             this.message = '结果展示：'
-            this.message = this.message + '\n' + 'HMacSha256: ' + result256.hex()
+            this.message = this.message + '\n' + 'HMacSha256: ' + result256.hex()+ "  code:" + result256.code
             hilog.info(1000, 'Securitytag', this.message)
           })
 
@@ -62,7 +62,7 @@ struct Index {
           .onClick(async () => {
             let resultSha256 = await Security.sha256('abcdef')
             this.message = '结果展示：'
-            this.message = this.message + '\n' + 'sha256: ' + resultSha256.hex()
+            this.message = this.message + '\n' + 'sha256: ' + resultSha256.hex() + "  code:" + resultSha256.code
             hilog.info(1000, 'Securitytag', this.message)
           })
 
@@ -80,7 +80,7 @@ struct Index {
             let iv = '67e7d725dfe24ca1'
             let aesRst = await Security.aesEncrypt(plainText, key, iv)
             this.message = '结果展示：'
-            this.message = this.message + '\n' + 'aesEncrypt: ' + aesRst.hex()
+            this.message = this.message + '\n' + 'aesEncrypt: ' + aesRst.hexLower() + "  code:" + aesRst.code
             hilog.info(1000, 'Securitytag', this.message)
 
             // 加密
@@ -123,7 +123,7 @@ struct Index {
             // 加密
             let aesRst = await Security.aesEncryptWithSymAlgName(plainText, key, iv, AESKeyEnum.AES192)
             this.message = '结果展示：'
-            this.message = this.message + '\n' + 'aesEncrypt192: ' + aesRst.hex()
+            this.message = this.message + '\n' + 'aesEncrypt192: ' + aesRst.hex()+ "  code:" + aesRst.code
             hilog.info(1000, 'Securitytag', this.message)
 
             let aesRst2 =
@@ -163,7 +163,7 @@ struct Index {
             // 加密
             let aesRst = await Security.aesEncryptWithSymAlgName(plainText, key, iv, AESKeyEnum.AES256)
             this.message = '结果展示：'
-            this.message = this.message + '\n' + 'aesEncrypt256: ' + aesRst.hex()
+            this.message = this.message + '\n' + 'aesEncrypt256: ' + aesRst.hex()+ "  code:" + aesRst.code
             hilog.info(1000, 'Securitytag', this.message)
 
             let aesRst2 =
