@@ -20,68 +20,68 @@ export enum AESKeyEnum {
 
 export class Security {
   static async HMacSha1(encryptString: string, keyString: string): Promise<SecurityResult> {
-    let shaData = await new HMac().encrypt(encryptString, keyString, HMACEnum.SHA1)
+    let shaData = await new HMac().hMac(encryptString, keyString, HMACEnum.SHA1)
     return new SecurityResult(shaData)
   }
 
   static async HMacSha224(encryptString: string, keyString: string): Promise<SecurityResult> {
-    let shaData = await new HMac().encrypt(encryptString, keyString, HMACEnum.SHA224)
+    let shaData = await new HMac().hMac(encryptString, keyString, HMACEnum.SHA224)
     return new SecurityResult(shaData)
   }
 
   static async HMacSha256(encryptString: string, keyString: string): Promise<SecurityResult> {
-    let shaData = await new HMac().encrypt(encryptString, keyString, HMACEnum.SHA256)
+    let shaData = await new HMac().hMac(encryptString, keyString, HMACEnum.SHA256)
     return new SecurityResult(shaData)
   }
 
   static async HMacSha384(encryptString: string, keyString: string): Promise<SecurityResult> {
-    let shaData = await new HMac().encrypt(encryptString, keyString, HMACEnum.SHA384)
+    let shaData = await new HMac().hMac(encryptString, keyString, HMACEnum.SHA384)
     return new SecurityResult(shaData)
   }
 
   static async HMacSha512(encryptString: string, keyString: string): Promise<SecurityResult> {
-    let shaData = await new HMac().encrypt(encryptString, keyString, HMACEnum.SHA512)
+    let shaData = await new HMac().hMac(encryptString, keyString, HMACEnum.SHA512)
     return new SecurityResult(shaData)
   }
 
   static async HMacSM3(encryptString: string, keyString: string): Promise<SecurityResult> {
-    let shaData = await new HMac().encrypt(encryptString, keyString, HMACEnum.SM3)
+    let shaData = await new HMac().hMac(encryptString, keyString, HMACEnum.SM3)
     return new SecurityResult(shaData)
   }
 
 
   static async sha1(encryptString: string): Promise<SecurityResult> {
-    let shaData = await new MD().encrypt(encryptString, MdEnum.SHA1)
+    let shaData = await new MD().md(encryptString, MdEnum.SHA1)
     return new SecurityResult(shaData)
   }
 
   static async sha224(encryptString: string): Promise<SecurityResult> {
-    let shaData = await new MD().encrypt(encryptString, MdEnum.SHA224)
+    let shaData = await new MD().md(encryptString, MdEnum.SHA224)
     return new SecurityResult(shaData)
   }
 
   static async sha256(encryptString: string): Promise<SecurityResult> {
-    let shaData = await new MD().encrypt(encryptString, MdEnum.SHA256)
+    let shaData = await new MD().md(encryptString, MdEnum.SHA256)
     return new SecurityResult(shaData)
   }
 
   static async sha384(encryptString: string): Promise<SecurityResult> {
-    let shaData = await new MD().encrypt(encryptString, MdEnum.SHA384)
+    let shaData = await new MD().md(encryptString, MdEnum.SHA384)
     return new SecurityResult(shaData)
   }
 
   static async sha512(encryptString: string): Promise<SecurityResult> {
-    let shaData = await new MD().encrypt(encryptString, MdEnum.SHA512)
+    let shaData = await new MD().md(encryptString, MdEnum.SHA512)
     return new SecurityResult(shaData)
   }
 
   static async sm3(encryptString: string): Promise<SecurityResult> {
-    let shaData = await new MD().encrypt(encryptString, MdEnum.SM3)
+    let shaData = await new MD().md(encryptString, MdEnum.SM3)
     return new SecurityResult(shaData)
   }
 
   static async md5(encryptString: string): Promise<SecurityResult> {
-    let shaData = await new MD().encrypt(encryptString, MdEnum.MD5)
+    let shaData = await new MD().md(encryptString, MdEnum.MD5)
     return new SecurityResult(shaData)
   }
 

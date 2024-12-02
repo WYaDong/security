@@ -1,6 +1,6 @@
 # **Security**
 
-by yadong <br>
+by ya dong <br>
 [MIT License]
 
 ## Security
@@ -22,7 +22,7 @@ let iv = '67e7d725dfe24ca1'
 let result = await Security.aesEncrypt(plainText, key, iv)
 ```
 
-#### AES256 Encrypt & Decrypt:
+#### AES Encrypt & Decrypt:
 
 ```arkts
 let plainText = '1662100123'

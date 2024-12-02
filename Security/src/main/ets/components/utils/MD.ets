@@ -20,7 +20,7 @@ export enum MdEnum {
 }
 
 export class MD {
-  async encrypt(sourceString: string, MDEnum: MdEnum): Promise<Uint8Array> {
+  async md(sourceString: string, MDEnum: MdEnum): Promise<Uint8Array> {
     try {
       let md = cryptoFramework.createMd(MDEnum)
       await md.update({

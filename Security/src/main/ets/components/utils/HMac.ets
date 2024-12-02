@@ -26,7 +26,7 @@ export class HMac {
     return symKey
   }
 
-  async encrypt(sourceString: string, keyString: string, HMACType: HMACEnum): Promise<Uint8Array> {
+  async hMac(sourceString: string, keyString: string, HMACType: HMACEnum): Promise<Uint8Array> {
     try {
       let keyData = new Uint8Array(buffer.from(keyString, 'utf-8').buffer)
       let key = await this.genSymKeyByData(keyData)
@@ -36,7 +36,6 @@ export class HMac {
       await mac.init(key)
       let messageData = new Uint8Array(buffer.from(sh256String, 'utf-8').buffer)
       let updateLength = 1000
-      await mac.init(key)
       for (let i = 0; i < messageData.length; i += updateLength) {
         let updateMessage = messageData.subarray(i, i + updateLength);
         let updateMessageBlob: cryptoFramework.DataBlob = { data: updateMessage };
