@@ -28,6 +28,7 @@ export class SecurityResult {
       return util.TextDecoder.create().decodeToString(this._data)
     } catch (e) {
       HiLogUtils.error(JSON.stringify(e))
+      this.code = 0
       return ''
     }
   }
@@ -45,6 +46,7 @@ export class SecurityResult {
       return new util.Base64Helper().encodeToStringSync(this._data)
     } catch (e) {
       HiLogUtils.error(JSON.stringify(e))
+      this.code = 0
       return ''
     }
   }

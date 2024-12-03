@@ -1,7 +1,7 @@
 import { hilog } from '@kit.PerformanceAnalysisKit'
-import { Security } from '@yd/security'
+import { Security } from '../Index'
 import { buffer } from '@kit.ArkTS'
-import { AESKeyEnum } from '@yd/security/src/main/ets/components/Security'
+import { AESKeyEnum } from '../src/main/ets/components/Security'
 
 @Entry
 @Component
