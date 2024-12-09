@@ -14,7 +14,7 @@ export class SecurityResult {
 
   constructor(initData: Uint8Array) {
     this._data = initData
-    if (initData && initData.length > 0) {
+    if (this._data && this._data.length > 0) {
       this.code = 100
     }
   }
@@ -24,6 +24,9 @@ export class SecurityResult {
   }
 
   utf8String(): string {
+    if (this.code === 0) {
+      return ''
+    }
     try {
       return util.TextDecoder.create().decodeToString(this._data)
     } catch (e) {
@@ -34,14 +37,23 @@ export class SecurityResult {
   }
 
   hex(): string {
+    if (this.code === 0) {
+      return ''
+    }
     return this.hexLower().toUpperCase()
   }
 
   hexLower(): string {
+    if (this.code === 0) {
+      return ''
+    }
     return this._data.reduce((str, byte) => str + byte.toString(16).padStart(2, '0'), '')
   }
 
   base64(): string {
+    if (this.code === 0) {
+      return ''
+    }
     try {
       return new util.Base64Helper().encodeToStringSync(this._data)
     } catch (e) {

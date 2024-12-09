@@ -57,3 +57,9 @@ by ya dong <br>
 1.文档优化<br>
 2.SDK内部方法名调整<br>
 3.example文件更新<br>
+
+## 1.1.2
+2024.12.09 发布<br>
+基于API12开发 <br>
+开发工具版本为: 5.0.3.906, built on October 21, 2024<br>
+code逻辑优化
