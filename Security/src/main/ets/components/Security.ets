@@ -19,32 +19,32 @@ export enum AESKeyEnum {
 }
 
 export class Security {
-  static async HMacSha1(encryptString: string, keyString: string): Promise<SecurityResult> {
+  static async hMacSha1(encryptString: string, keyString: string): Promise<SecurityResult> {
     let shaData = await new HMac().hMac(encryptString, keyString, HMACEnum.SHA1)
     return new SecurityResult(shaData)
   }
 
-  static async HMacSha224(encryptString: string, keyString: string): Promise<SecurityResult> {
+  static async hMacSha224(encryptString: string, keyString: string): Promise<SecurityResult> {
     let shaData = await new HMac().hMac(encryptString, keyString, HMACEnum.SHA224)
     return new SecurityResult(shaData)
   }
 
-  static async HMacSha256(encryptString: string, keyString: string): Promise<SecurityResult> {
+  static async hMacSha256(encryptString: string, keyString: string): Promise<SecurityResult> {
     let shaData = await new HMac().hMac(encryptString, keyString, HMACEnum.SHA256)
     return new SecurityResult(shaData)
   }
 
-  static async HMacSha384(encryptString: string, keyString: string): Promise<SecurityResult> {
+  static async hMacSha384(encryptString: string, keyString: string): Promise<SecurityResult> {
     let shaData = await new HMac().hMac(encryptString, keyString, HMACEnum.SHA384)
     return new SecurityResult(shaData)
   }
 
-  static async HMacSha512(encryptString: string, keyString: string): Promise<SecurityResult> {
+  static async hMacSha512(encryptString: string, keyString: string): Promise<SecurityResult> {
     let shaData = await new HMac().hMac(encryptString, keyString, HMACEnum.SHA512)
     return new SecurityResult(shaData)
   }
 
-  static async HMacSM3(encryptString: string, keyString: string): Promise<SecurityResult> {
+  static async hMacSM3(encryptString: string, keyString: string): Promise<SecurityResult> {
     let shaData = await new HMac().hMac(encryptString, keyString, HMACEnum.SM3)
     return new SecurityResult(shaData)
   }
