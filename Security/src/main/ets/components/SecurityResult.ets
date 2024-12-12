@@ -30,7 +30,7 @@ export class SecurityResult {
     try {
       return util.TextDecoder.create().decodeToString(this._data)
     } catch (e) {
-      HiLogUtils.error(JSON.stringify(e))
+      HiLogUtils.error("code: " + e.code + " message: " + e.message)
       this.code = 0
       return ''
     }
@@ -57,7 +57,7 @@ export class SecurityResult {
     try {
       return new util.Base64Helper().encodeToStringSync(this._data)
     } catch (e) {
-      HiLogUtils.error(JSON.stringify(e))
+      HiLogUtils.error("code: " + e.code + " message: " + e.message)
       this.code = 0
       return ''
     }

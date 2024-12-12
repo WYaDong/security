@@ -60,6 +60,7 @@ by ya dong <br>
 
 ## 1.1.2
 2024.12.09 发布<br>
+2024.12.12 下架 <br>
 基于API12开发 <br>
 开发工具版本为: 5.0.3.906, built on October 21, 2024<br>
 1.code逻辑优化
@@ -68,6 +69,13 @@ by ya dong <br>
 2024.12.10 发布<br>
 基于API12开发 <br>
 开发工具版本为: 5.0.3.906, built on October 21, 2024<br>
-1.去掉混淆
-2.SDK方法名更改
-3.demo优化
+1.去掉混淆 <br>
+2.SDK方法名更改 <br>
+3.demo优化 <br>
+
+## 1.1.4
+2024.12.12 发布<br>
+基于API12开发 <br>
+开发工具版本为: 5.0.3.906, built on October 21, 2024<br>
+1.SDK参数名更改 <br>
+2.SDKlog优化 <br>

@@ -29,7 +29,7 @@ export class MD {
       let mdOutput = await md.digest()
       return mdOutput.data
     } catch (e) {
-      HiLogUtils.error(JSON.stringify(e))
+      HiLogUtils.error("code: " + e.code + " message: " + e.message)
       return new Uint8Array
     }
   }

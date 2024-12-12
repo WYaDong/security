@@ -79,7 +79,7 @@ export class AES {
       let cipherData = await cipher.doFinal(plainText)
       return cipherData.data
     } catch (e) {
-      HiLogUtils.error(JSON.stringify(e))
+      HiLogUtils.error("code: " + e.code + " message: " + e.message)
       return new Uint8Array()
     }
   }

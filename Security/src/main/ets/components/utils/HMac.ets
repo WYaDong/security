@@ -44,7 +44,7 @@ export class HMac {
       let macResult = await mac.doFinal()
       return macResult.data
     } catch (e) {
-      HiLogUtils.error(JSON.stringify(e))
+      HiLogUtils.error("code: " + e.code + " message: " + e.message)
       return new Uint8Array()
     }
   }
