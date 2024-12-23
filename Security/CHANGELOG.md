@@ -79,3 +79,9 @@ by ya dong <br>
 开发工具版本为: 5.0.3.906, built on October 21, 2024<br>
 1.SDK参数名更改 <br>
 2.SDKlog优化 <br>
+
+## 1.1.5
+2024.12.23 发布<br>
+基于API12开发 <br>
+开发工具版本为: 5.0.3.906, built on October 21, 2024<br>
+1.文档更新 <br>
