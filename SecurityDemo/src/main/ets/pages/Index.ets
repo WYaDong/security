@@ -2,6 +2,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit'
 import { Security } from '@yd/security'
 import { buffer } from '@kit.ArkTS'
 import { AESKeyEnum } from '@yd/security/src/main/ets/components/Security'
+import { window } from '@kit.ArkUI'
 
 @Entry
 @Component
@@ -9,17 +10,26 @@ struct Index {
   @State message: string = '结果展示：'
   private logTag: string = 'securityTag'
 
+  async aboutToAppear(){
+    let systemBarProperties: window.SystemBarProperties = {
+      statusBarColor: '#000000',
+      statusBarContentColor: '#ffffff',
+    }
+    let windowClass: window.Window = await window.getLastWindow(getContext(this))
+    await windowClass.setWindowSystemBarProperties(systemBarProperties)
+  }
+
   build() {
     Flex({ direction: FlexDirection.Column }) {
       Column() {
         Text(this.message)
           .textAlign(TextAlign.Start)
           .padding(20)
-          .fontColor(Color.White)
+          .fontColor($r('app.color.start_window_background'))
       }
       .width('100%')
       .height('30%')
-      .backgroundColor(Color.Black)
+      .backgroundColor($r('app.color.window_background'))
       .alignItems(HorizontalAlign.Start)
 
       Column() {
@@ -30,7 +40,7 @@ struct Index {
           .width('80%')
           .height(45)
           .margin({ top: 15 })
-          .backgroundColor(Color.Blue)
+          .backgroundColor($r('app.color.start_btn_background'))
           .onClick(async () => {
             let md5 = await Security.md5('abcdef')
             this.message = '结果展示：'
@@ -44,7 +54,7 @@ struct Index {
           .width('80%')
           .height(45)
           .margin({ top: 15 })
-          .backgroundColor(Color.Blue)
+          .backgroundColor($r('app.color.start_btn_background'))
           .onClick(async () => {
             let result256 = await Security.hMacSha256('abcdef', '123456')
             this.message = '结果展示：'
@@ -59,7 +69,7 @@ struct Index {
           .width('80%')
           .height(45)
           .margin({ top: 15 })
-          .backgroundColor(Color.Blue)
+          .backgroundColor($r('app.color.start_btn_background'))
           .onClick(async () => {
             let resultSha256 = await Security.sha256('abcdef')
             this.message = '结果展示：'
@@ -74,7 +84,7 @@ struct Index {
           .width('80%')
           .height(45)
           .margin({ top: 15 })
-          .backgroundColor(Color.Blue)
+          .backgroundColor($r('app.color.start_btn_background'))
           .onClick(async () => {
             let plainText = '1662100123' //待加密内容
             let key = 'afae4ec844ed14ca' //长度16
@@ -115,7 +125,7 @@ struct Index {
           .width('80%')
           .height(45)
           .margin({ top: 15 })
-          .backgroundColor(Color.Blue)
+          .backgroundColor($r('app.color.start_btn_background'))
           .onClick(async () => {
             let plainText = '1662100123' //待加密内容
             let key = 'afae4ec844ed14ca12345678' //长度24
@@ -155,7 +165,7 @@ struct Index {
           .width('80%')
           .height(45)
           .margin({ top: 15 })
-          .backgroundColor(Color.Blue)
+          .backgroundColor($r('app.color.start_btn_background'))
           .onClick(async () => {
             let plainText = '1662100123' //待加密内容
             let key = 'afae4ec844ed14ca1234567812345678' //长度32
